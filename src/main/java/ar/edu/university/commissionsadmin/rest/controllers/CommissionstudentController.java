@@ -11,8 +11,8 @@ import ar.edu.university.commissionsadmin.core.entities.Commissionstudent;
 import ar.edu.university.commissionsadmin.core.exceptions.ResourceNotFoundException;
 import ar.edu.university.commissionsadmin.core.services.CommissionsStudentService;
 
-@RestController("commissionsstudent")
-//("/api/v1/commissionstudents")
+@RestController
+@RequestMapping("api/v1/commissionsstudents")
 public class CommissionstudentController {
 
 	@Autowired 
@@ -23,14 +23,10 @@ public class CommissionstudentController {
 		Optional<Commissionstudent> cs= commissionsStudentService.find(id);
 		
 		if (!cs.isPresent()) {
-	            throw new ResourceNotFoundException("resource not found");
+	            throw new ResourceNotFoundException("Resource not found.");
 	
 		}
         return cs.get();
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String get() {
-		return "Holla!";
-	}
 }
