@@ -20,8 +20,8 @@ public class Semester implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(unique=true, nullable=false)
-	private byte id;
+	@Column(unique=true, nullable=false, length=1)
+	private String id;
 
 	@Column(nullable=false, length=15)
 	private String name;
@@ -34,11 +34,11 @@ public class Semester implements Serializable {
 	public Semester() {
 	}
 
-	public byte getId() {
+	public String getId() {
 		return this.id;
 	}
 
-	public void setId(byte id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

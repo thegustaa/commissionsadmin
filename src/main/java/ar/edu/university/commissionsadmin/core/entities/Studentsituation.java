@@ -72,4 +72,12 @@ public class Studentsituation implements Serializable {
 		return commissionstudent;
 	}
 
+	public boolean isRegularStudent() {
+		return (this.id.compareTo("R")==0);
+	}
+	
+	public boolean isNonRegularStudent() {
+		return (this.id.compareTo("L")==0);
+	}
+
 }

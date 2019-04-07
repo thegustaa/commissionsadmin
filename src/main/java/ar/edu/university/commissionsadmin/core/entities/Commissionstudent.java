@@ -19,7 +19,7 @@ public class Commissionstudent implements Serializable {
 	@Column(unique=true, nullable=false)
 	private Integer id;
 
-	private Integer finalscore;
+	private Float finalscore;
 
 	//bi-directional many-to-one association to Commission
 	@ManyToOne
@@ -47,11 +47,11 @@ public class Commissionstudent implements Serializable {
 		this.id = id;
 	}
 
-	public Integer getFinalscore() {
+	public Float getFinalscore() {
 		return this.finalscore;
 	}
 
-	public void setFinalscore(Integer finalscore) {
+	public void setFinalscore(Float finalscore) {
 		this.finalscore = finalscore;
 	}
 

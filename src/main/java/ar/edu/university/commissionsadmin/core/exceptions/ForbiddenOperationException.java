@@ -1,16 +1,14 @@
 package ar.edu.university.commissionsadmin.core.exceptions;
 
 /**
- * Entidad no encontrada.
+ * Operación inválida.
  * @author Gustavo
  *
  */
-public class ResourceNotFoundException extends RuntimeException {
-	public ResourceNotFoundException(String message) {
+public class ForbiddenOperationException extends RuntimeException {
+	public ForbiddenOperationException(String message) {
 		super(message);
 	}
 
-
 	private static final long serialVersionUID = 1L;
-
 }
