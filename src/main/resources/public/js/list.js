@@ -1,11 +1,11 @@
 $(document).ready(function() { 
-		$("#finalscore").val(null);
+		$("#list .finalscore").val(null);
 		var request = $.ajax({
 		  url: "/api/v1/commissions",
 		  method: "GET",
 		  dataType: "json"
 		}).done(function( data ) {
-			var jqSelect = $( "#commissions" );
+			var jqSelect = $( "#list .commissions" );
 			resetSelect(jqSelect );
 			$.each(data, function(index, commission) {
 				var name= commission.professorship.name
@@ -18,11 +18,11 @@ $(document).ready(function() {
 		  alert( "Request failed: " + textStatus );
 		});
 		
-		$("#commissions").on('change', function(){
-			$("#table-studentscommission tbody").html("");
-			$("#search-input").val("");
+		$("#list .commissions").on('change', function(){
+			$("#list .table-studentscommission tbody").html("");
+			$("#list .search-input").val("");
 			var request = $.ajax({
-				  url: "/api/v1/commissionsstudents/search?id_commission="+$("#commissions").val(),
+				  url: "/api/v1/commissionsstudents/search?id_commission="+$("#list .commissions").val(),
 				  method: "GET",
 				  dataType: "json"
 				}).done(function( commissionstudents ) {					
@@ -47,16 +47,16 @@ $(document).ready(function() {
 						        "<td>"+commissionstudent.studentsituation.name+"</td>"+
 						        "<td>"+finalscore+"</td>"+
 						      "</tr> ";
-							$("#table-studentscommission tbody").append(row);
+							$("#list .table-studentscommission tbody").append(row);
 						});
 					}).fail(function( jqXHR, textStatus ) {
 							alert( "Request failed: " + textStatus );
 					});
 				});
 		
-		 $("#search-input").on("keyup", function() {
+		 $("#list .search-input").on("keyup", function() {
 			    var value = $(this).val().toLowerCase();
-			    $("#table-studentscommission tr").filter(function() {
+			    $("#list .table-studentscommission tr").filter(function() {
 			      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 			    });
 		 });
