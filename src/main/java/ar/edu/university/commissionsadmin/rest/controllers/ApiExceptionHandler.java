@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import ar.edu.university.commissionsadmin.core.exceptions.ForbiddenOperationException;
 
+/**
+ * Manejador de excepciones.
+ * @author Gustavo
+ *
+ */
 @ControllerAdvice
 public class ApiExceptionHandler {
 

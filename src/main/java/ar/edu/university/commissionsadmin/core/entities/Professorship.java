@@ -9,7 +9,7 @@ import java.util.List;
 
 
 /**
- * The persistent class for the professorship database table.
+ * Clase de cátedras.
  * 
  */
 @Entity

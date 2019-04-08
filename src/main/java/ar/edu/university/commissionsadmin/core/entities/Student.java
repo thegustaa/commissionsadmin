@@ -9,7 +9,7 @@ import java.util.List;
 
 
 /**
- * The persistent class for the student database table.
+ * Clase de estudiantes.
  * 
  */
 @Entity

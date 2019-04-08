@@ -9,7 +9,7 @@ import java.util.List;
 
 
 /**
- * The persistent class for the subject database table.
+ * Clase de materias.
  * 
  */
 @Entity

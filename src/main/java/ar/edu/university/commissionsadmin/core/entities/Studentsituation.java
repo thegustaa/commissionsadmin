@@ -9,7 +9,7 @@ import java.util.List;
 
 
 /**
- * The persistent class for the studentsituation database table.
+ * Clase de situacion de estudiantes (Libre, Regular)
  * 
  */
 @Entity

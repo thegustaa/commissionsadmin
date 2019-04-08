@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "e6b2f656-c22b-4942-bbaf-8b2b5595a6fb",
+		"name": "commissionsadmin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CommissionStudents",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GetCommissionsStudents",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "67edf8b2-375d-4bdc-a592-f00a7020754a",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{start_url}}/{{api_url}}/commissionsstudents/1",
+									"host": [
+										"{{start_url}}"
+									],
+									"path": [
+										"{{api_url}}",
+										"commissionsstudents",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SearchCommissionByStudentId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b00c510b-2963-47d4-82cd-ffef1ee1373b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{start_url}}/{{api_url}}/commissionsstudents/search?id_commission=1",
+									"host": [
+										"{{start_url}}"
+									],
+									"path": [
+										"{{api_url}}",
+										"commissionsstudents",
+										"search"
+									],
+									"query": [
+										{
+											"key": "id_commission",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "SaveStudentCommissionFinalscore",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bb44f49e-5cd8-43f8-96ba-3f0db732d07d",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(204); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"finalscore\": 10\n}"
+								},
+								"url": {
+									"raw": "{{start_url}}/{{api_url}}/commissionsstudents/1",
+									"host": [
+										"{{start_url}}"
+									],
+									"path": [
+										"{{api_url}}",
+										"commissionsstudents",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DisallowedStudentCommissionFinalscoreOperation",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b901c426-9f33-40c1-945f-694470c58385",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(403); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"finalscore\": 10\n}"
+								},
+								"url": {
+									"raw": "{{start_url}}/{{api_url}}/commissionsstudents/3",
+									"host": [
+										"{{start_url}}"
+									],
+									"path": [
+										"{{api_url}}",
+										"commissionsstudents",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GetStudents",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8d3d5396-45a1-40a5-afb2-60b90a4c5a90",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{start_url}}/{{api_url}}/students",
+									"host": [
+										"{{start_url}}"
+									],
+									"path": [
+										"{{api_url}}",
+										"students"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCommissionsForStudent",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8b70551d-9b38-4ac3-966c-8cd0b28ea3ea",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{start_url}}/{{api_url}}/students/1/commissionsstudent/1",
+									"host": [
+										"{{start_url}}"
+									],
+									"path": [
+										"{{api_url}}",
+										"students",
+										"1",
+										"commissionsstudent",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Commissions",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GetAllCommissions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "879d1ebf-a9b3-48af-ae12-c79087cc60a3",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{start_url}}/{{api_url}}/commissions",
+									"host": [
+										"{{start_url}}"
+									],
+									"path": [
+										"{{api_url}}",
+										"commissions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCommission",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "35bb6c5f-d4e7-48a4-b6f9-86193d2e139b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{start_url}}/{{api_url}}/commissions/1",
+									"host": [
+										"{{start_url}}"
+									],
+									"path": [
+										"{{api_url}}",
+										"commissions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "579d425b-03cb-4d1b-a14a-c96911ad9c71",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f3595d7f-17b8-447f-884a-84060ad9ecd3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c3dc2205-eac8-4f7d-bc88-b79d49d1ba45",
+			"key": "start_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"id": "91a07cca-073a-4d84-a4b1-81d8d693602c",
+			"key": "api_url",
+			"value": "api/v1",
+			"type": "string"
+		}
+	]
+}

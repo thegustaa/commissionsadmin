@@ -9,7 +9,7 @@ import java.util.List;
 
 
 /**
- * The persistent class for the semester database table.
+ * Clase de semestres.
  * 
  */
 @Entity

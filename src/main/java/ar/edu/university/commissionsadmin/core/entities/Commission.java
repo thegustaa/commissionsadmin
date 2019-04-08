@@ -9,7 +9,7 @@ import java.util.List;
 
 
 /**
- * The persistent class for the commission database table.
+ * Clase de comisiones de alumnos.
  * 
  */
 @Entity
